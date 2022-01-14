@@ -76,7 +76,6 @@ bool HandleOpen()
 void SetCommentSymbol(string &start_symbol, string &end_symbol)
 {
 	const LanguageDependence *ld = LD;
-
 	while (ld->language != "LAST")
 	{
 		if (string(optarg) == ld->language)
@@ -85,6 +84,7 @@ void SetCommentSymbol(string &start_symbol, string &end_symbol)
 			end_symbol = ld->end_symbol;
 			break;
 		}
+		ld++;
 	}
 }
 
